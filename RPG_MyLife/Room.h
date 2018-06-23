@@ -1,4 +1,7 @@
 #pragma once
+#include <list>
+
+class Component;
 class Room
 {
 public:
@@ -6,13 +9,23 @@ public:
 	~Room();
 
 
-	void Init(int RoomCode,int posx,int posy);
+	void Init(char * RoomCode,int posx,int posy);
 	void Update(float deltaTime);
 	void render();
 
-public:
+private:
 	int _posX;
 	int _posY;
-	int _roomCode;
+
+
+
+
+
+private:
+	std::list<Component*> _componentList;
+	
+
+	bool CheckPlayer();
+
 };
 

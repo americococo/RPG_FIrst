@@ -45,9 +45,9 @@ void Stage::Init()
 				{
 					for (int x = 1; x <= _StageMaxX; x++)
 					{
-						int roomCode = atoi(token);
+						char * roomCode= token;
 
-						if (roomCode != -1)
+						if (token[0] != '-')
 						{
 							Room * room = new Room();
 							room->Init(roomCode, x, row);
