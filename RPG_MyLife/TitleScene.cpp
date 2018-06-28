@@ -14,7 +14,7 @@ TitleScene::~TitleScene()
 
 void TitleScene::Init()
 {
-	_sprite = new Sprite(L"./BackGround/BackGround.jpg", L"./BackGround/BackGround.json");
+	_sprite = new Sprite(L"./Sprite/BackGround/BackGround.jpg", L"./Sprite/BackGround/BackGround.json");
 }
 
 void TitleScene::Start()

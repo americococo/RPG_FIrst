@@ -29,10 +29,7 @@ void StageManager::Init()
 		_stageList.push_back(stage);
 	}
 
-
-
 	_stage = _stageList.front();
-	
 
 }
 void StageManager::Update(float deltaTime)

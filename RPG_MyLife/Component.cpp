@@ -3,15 +3,23 @@
 
 Component::Component()
 {
+	_ObjectType = eComponentType::NONE;
 }
 
 
 Component::~Component()
 {
 }
-void Component::Init()
-{
 
+eComponentType Component::GetComponentType()
+{
+	return _ObjectType;
+}
+
+void Component::Init(int posX,int posY)
+{
+	_posX = posX;
+	_posY = posY;
 }
 void Component::Update(float deltaTime)
 {

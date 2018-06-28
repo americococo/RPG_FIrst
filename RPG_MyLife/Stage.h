@@ -1,7 +1,10 @@
 #pragma once
 #include <Windows.h>
-#include <vector>
+#include <map>
+
 #include <string>
+
+
 
 class Room;
 class Stage
@@ -25,7 +28,7 @@ private:
 	int _StageMaxX;
 	int _StageMaxY;
 
-
-	std::vector<Room*> _roomList;
+	
+	std::map<std::pair<int,int >,Room*> _roomList;
 };
 

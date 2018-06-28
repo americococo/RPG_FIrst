@@ -1,5 +1,6 @@
 #include "Stage.h"
 #include "Room.h"
+
 #include<fstream>
 
 Stage::Stage(LPCWSTR StageDataFile)
@@ -51,7 +52,8 @@ void Stage::Init()
 						{
 							Room * room = new Room();
 							room->Init(roomCode, x, row);
-							_roomList.push_back(room);
+
+							_roomList[std::make_pair(x,row)] = room;
 						}
 
 						token = strtok(NULL, ",");
@@ -68,20 +70,20 @@ void Stage::Init()
 }
 void Stage::Update(float deltaTime)
 {
-	std::vector<Room *>::iterator itr;
-
+	
+	std::map<std::pair<int,int>, Room*>::iterator itr;
 	for (itr = _roomList.begin(); itr != _roomList.end(); itr++)
 	{
-		(*itr)->Update(deltaTime);
+		itr->second->Update(deltaTime);
 	}
 }
 void Stage::render()
 {
-	std::vector<Room *>::iterator itr;
+	std::map<std::pair<int, int>, Room *>::iterator itr;
 
 	for (itr = _roomList.begin(); itr != _roomList.end(); itr++)
 	{
-		(*itr)->render();
+		itr->second->render();
 	}
 }
 

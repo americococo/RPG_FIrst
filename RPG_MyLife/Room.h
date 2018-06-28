@@ -1,6 +1,19 @@
 #pragma once
 #include <list>
 
+enum eRoomCodeDecode
+{
+	PlayerStart,
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN,
+	IsItem,
+	IsEnemy,
+	IsBossRoom
+};
+
+
 class Component;
 class Room
 {
@@ -18,7 +31,7 @@ private:
 	int _posY;
 
 
-
+	char * _roomCode;
 
 
 private:
@@ -26,6 +39,9 @@ private:
 	
 
 	bool CheckPlayer();
+
+
+	void CreateRoomGate(eRoomCodeDecode roomcode);
 
 };
 
