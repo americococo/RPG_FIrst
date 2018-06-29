@@ -1,7 +1,7 @@
 #include "Gate.h"
 #include "Sprite.h"
 
-#include "MessageFrom.h"
+
 
 Gate::Gate()
 {
@@ -37,7 +37,7 @@ void Gate::DeInit()
 
 }
 
-void ReciverMessage(MessageFrom msgFrom)
+void Gate::ReciverMessage(MessageFrom msgFrom)
 {
 	
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-struct MessageFrom;
+#include "MessageFrom.h"
 
 class Sprite;
 enum eComponentType

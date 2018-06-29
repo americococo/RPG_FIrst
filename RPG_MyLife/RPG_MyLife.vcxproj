@@ -151,6 +151,7 @@
     <ClCompile Include="Gate.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessagePost.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Gate.h" />
     <ClInclude Include="MessageFrom.h" />
     <ClInclude Include="MessagePost.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Scene.h" />

@@ -5,7 +5,7 @@
 
 #include "Gate.h"
 
-
+#include "Player.h"
 #include "MessagePost.h"
 
 Room::Room()
@@ -25,9 +25,9 @@ void Room::Init(char * RoomCode,int posx,int posy)
 
 	if (RoomCode[eRoomCodeDecode::PlayerStart] == 'o')
 	{
-		/*Player * player = new Player();
-		player->init();
-		_componentList.push_back((Component*)(player));*/
+		Player * player = new Player();
+		player->Init(GameSystem::GetInstance()->GetWidth() / 2, GameSystem::GetInstance()->GetHeight() / 2);
+		_componentList.push_back(player);
 	}
 
 	CreateRoomGate(eRoomCodeDecode::LEFT);
@@ -59,22 +59,22 @@ void Room::CreateRoomGate(eRoomCodeDecode roomcode)
 	case eRoomCodeDecode::LEFT:
 		gatePosX = 0 + 32 / 2;
 		gatePosY = GameSystem::GetInstance()->GetHeight()/2;
-		direction = LEFT;
+		direction = eDirection::LEFTRoom;
 		break;
 	case eRoomCodeDecode::RIGHT:
 		gatePosX= GameSystem::GetInstance()->GetWidth()-32/2;
 		gatePosY = GameSystem::GetInstance()->GetHeight() / 2;
-		direction = RIGHT;
+		direction = eDirection::RIGHTRoom;
 		break;
 	case eRoomCodeDecode::UP:
 		gatePosX = GameSystem::GetInstance()->GetWidth()/2;
 		gatePosY = 0 + 32/2;
-		direction = UP;
+		direction = eDirection::UPRoom;
 		break;
 	case eRoomCodeDecode::DOWN:
 		gatePosX = GameSystem::GetInstance()->GetWidth() / 2;
 		gatePosY = GameSystem::GetInstance()->GetHeight() - 32 / 2;
-		direction = DOWN;
+		direction = eDirection::DOWNRoom;
 		break;
 
 	default:

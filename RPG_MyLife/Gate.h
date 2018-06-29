@@ -1,13 +1,14 @@
 #pragma once
 #include "Component.h"
+#include "MessageFrom.h"
 
 enum eDirection
 {
-	NONE,
-	LEFT,
-	RIGHT,
-	UP,
-	DOWN
+	NONERoom,
+	LEFTRoom,
+	RIGHTRoom,
+	UPRoom,
+	DOWNRoom
 };
 
 

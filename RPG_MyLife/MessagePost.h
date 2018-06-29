@@ -4,7 +4,8 @@
 #include <queue>
 
 
-struct MessageFrom;
+#include "MessageFrom.h"
+
 class MessagePost
 {
 private:
