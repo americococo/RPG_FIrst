@@ -1,6 +1,7 @@
 #include "Gate.h"
-
 #include "Sprite.h"
+
+#include "MessageFrom.h"
 
 Gate::Gate()
 {
@@ -10,9 +11,11 @@ Gate::Gate()
 Gate::~Gate()
 {
 }
-void Gate::Init(int posX, int posY)
+void Gate::Init(int posX, int posY,eDirection GateDirection)
 {
 	_ObjectType = eComponentType::GATE;
+
+	_GateDirection = GateDirection;
 
 	_posX = posX;
 	_posY = posY;
@@ -32,4 +35,9 @@ void Gate::render()
 void Gate::DeInit()
 {
 
+}
+
+void ReciverMessage(MessageFrom msgFrom)
+{
+	
 }

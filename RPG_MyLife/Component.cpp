@@ -1,5 +1,5 @@
 #include "Component.h"
-
+#include "MessageFrom.h"
 
 Component::Component()
 {
@@ -14,6 +14,13 @@ Component::~Component()
 eComponentType Component::GetComponentType()
 {
 	return _ObjectType;
+}
+void Component::ReciverMessage(MessageFrom msgFrom)
+{
+	if (L"Collison" == msgFrom.message)
+	{
+		//충돌처리
+	}
 }
 
 void Component::Init(int posX,int posY)

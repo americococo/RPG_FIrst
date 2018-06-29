@@ -1,5 +1,43 @@
-﻿  Room.cpp
-json_vc71_libmtd.lib(json_reader.obj) : warning LNK4099: 'lib_json.pdb' PDB를 'json_vc71_libmtd.lib(json_reader.obj)' 또는 'C:\Users\a\Documents\GitHub\RPG_myLife\Debug\lib_json.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-json_vc71_libmtd.lib(json_value.obj) : warning LNK4099: 'lib_json.pdb' PDB를 'json_vc71_libmtd.lib(json_value.obj)' 또는 'C:\Users\a\Documents\GitHub\RPG_myLife\Debug\lib_json.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-json_vc71_libmtd.lib(json_writer.obj) : warning LNK4099: 'lib_json.pdb' PDB를 'json_vc71_libmtd.lib(json_writer.obj)' 또는 'C:\Users\a\Documents\GitHub\RPG_myLife\Debug\lib_json.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-  RPG_MyLife.vcxproj -> C:\Users\a\Documents\GitHub\RPG_myLife\Debug\RPG_MyLife.exe
+﻿  Component.cpp
+  Gate.cpp
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\gate.h(6): error C2365: 'NONE': 재정의: 이전 정의는 '열거자'입니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\component.h(12): note: 'NONE' 선언을 참조하십시오.
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\gate.cpp(17): error C2440: '=': 'int'에서 'eDirection'(으)로 변환할 수 없습니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\gate.cpp(17): note: 열거형 형식으로 변환하려면 명시적 캐스트(static_cast, C 스타일 캐스트 또는 함수 스타일 캐스트)가 필요합니다.
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\gate.cpp(24): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  MessagePost.cpp
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.13.26128\include\deque(966): error C2027: 정의되지 않은 형식 'MessageFrom'을(를) 사용했습니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\messagepost.h(2): note: 'MessageFrom' 선언을 참조하십시오.
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.13.26128\include\queue(23): note: 컴파일 중인 클래스 템플릿 인스턴스화 'std::deque<_Ty,std::allocator<_Ty>>'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=MessageFrom
+          ]
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\messagepost.h(18): note: 컴파일 중인 클래스 템플릿 인스턴스화 'std::queue<MessageFrom,std::deque<_Ty,std::allocator<_Ty>>>'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=MessageFrom
+          ]
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\messagepost.cpp(33): error C2027: 정의되지 않은 형식 'Component'을(를) 사용했습니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\messagefrom.h(5): note: 'Component' 선언을 참조하십시오.
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\messagepost.cpp(33): error C2227: '->ReciverMessage' 왼쪽은 클래스/구조체/공용 구조체/제네릭 형식을 가리켜야 합니다.
+  Room.cpp
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\gate.h(6): error C2365: 'NONE': 재정의: 이전 정의는 '열거자'입니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\component.h(12): note: 'NONE' 선언을 참조하십시오.
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\gate.h(7): error C2365: 'LEFT': 재정의: 이전 정의는 '열거자'입니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.h(7): note: 'LEFT' 선언을 참조하십시오.
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\gate.h(8): error C2365: 'RIGHT': 재정의: 이전 정의는 '열거자'입니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.h(8): note: 'RIGHT' 선언을 참조하십시오.
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\gate.h(9): error C2365: 'UP': 재정의: 이전 정의는 '열거자'입니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.h(9): note: 'UP' 선언을 참조하십시오.
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\gate.h(11): error C2365: 'DOWN': 재정의: 이전 정의는 '열거자'입니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.h(10): note: 'DOWN' 선언을 참조하십시오.
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.cpp(60): error C2440: '=': 'eRoomCodeDecode'에서 'eDirection'(으)로 변환할 수 없습니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.cpp(60): note: 열거형 형식으로 변환하려면 명시적 캐스트(static_cast, C 스타일 캐스트 또는 함수 스타일 캐스트)가 필요합니다.
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.cpp(65): error C2440: '=': 'eRoomCodeDecode'에서 'eDirection'(으)로 변환할 수 없습니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.cpp(65): note: 열거형 형식으로 변환하려면 명시적 캐스트(static_cast, C 스타일 캐스트 또는 함수 스타일 캐스트)가 필요합니다.
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.cpp(70): error C2440: '=': 'eRoomCodeDecode'에서 'eDirection'(으)로 변환할 수 없습니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.cpp(70): note: 열거형 형식으로 변환하려면 명시적 캐스트(static_cast, C 스타일 캐스트 또는 함수 스타일 캐스트)가 필요합니다.
+c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.cpp(75): error C2440: '=': 'eRoomCodeDecode'에서 'eDirection'(으)로 변환할 수 없습니다.
+  c:\users\a\documents\github\rpg_mylife\rpg_mylife\room.cpp(75): note: 열거형 형식으로 변환하려면 명시적 캐스트(static_cast, C 스타일 캐스트 또는 함수 스타일 캐스트)가 필요합니다.
+  코드를 생성하고 있습니다...

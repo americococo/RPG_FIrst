@@ -1,4 +1,7 @@
 #pragma once
+
+struct MessageFrom;
+
 class Sprite;
 enum eComponentType
 {
@@ -35,5 +38,10 @@ protected:
 public:
 	eComponentType GetComponentType();
 
+
+
+	//메세지 수신
+public:
+	virtual void ReciverMessage(MessageFrom msgFrom);
 };
 

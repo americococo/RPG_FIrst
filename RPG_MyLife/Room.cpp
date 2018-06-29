@@ -6,6 +6,8 @@
 #include "Gate.h"
 
 
+#include "MessagePost.h"
+
 Room::Room()
 {
 }
@@ -47,28 +49,32 @@ bool Room::CheckPlayer()
 void Room::CreateRoomGate(eRoomCodeDecode roomcode)
 {
 
-
 	if (_roomCode[roomcode] != 'o')
 		return;
 
 	int gatePosX, gatePosY;
+	eDirection direction;
 	switch (roomcode)
 	{
-	case LEFT:
+	case eRoomCodeDecode::LEFT:
 		gatePosX = 0 + 32 / 2;
 		gatePosY = GameSystem::GetInstance()->GetHeight()/2;
+		direction = LEFT;
 		break;
-	case RIGHT:
+	case eRoomCodeDecode::RIGHT:
 		gatePosX= GameSystem::GetInstance()->GetWidth()-32/2;
 		gatePosY = GameSystem::GetInstance()->GetHeight() / 2;
+		direction = RIGHT;
 		break;
-	case UP:
+	case eRoomCodeDecode::UP:
 		gatePosX = GameSystem::GetInstance()->GetWidth()/2;
 		gatePosY = 0 + 32/2;
+		direction = UP;
 		break;
-	case DOWN:
+	case eRoomCodeDecode::DOWN:
 		gatePosX = GameSystem::GetInstance()->GetWidth() / 2;
 		gatePosY = GameSystem::GetInstance()->GetHeight() - 32 / 2;
+		direction = DOWN;
 		break;
 
 	default:
@@ -77,7 +83,7 @@ void Room::CreateRoomGate(eRoomCodeDecode roomcode)
 
 
 	Gate * gate = new Gate();
-	gate->Init(gatePosX, gatePosY);
+	gate->Init(gatePosX, gatePosY,direction);
 	_componentList.push_back(gate);
 
 }
@@ -87,7 +93,7 @@ void Room::Update(float deltaTime)
 	if (false ==CheckPlayer())
 		return;
 
-
+	MessagePost::GetInstance()->ProcessMessageQueue();
 	
 	for (std::list<Component*>::iterator itr = _componentList.begin(); itr != _componentList.end(); itr++)
 	{

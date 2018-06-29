@@ -49,6 +49,12 @@
     <Filter Include="소스 파일\1.Game\Component\Gate">
       <UniqueIdentifier>{4a5260b1-ef26-468a-aa69-751734b311f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\1.Game\Component\MoveObject">
+      <UniqueIdentifier>{e2215ca3-94bb-4e85-be21-426dd44dea79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\System\Message">
+      <UniqueIdentifier>{21618219-b7b0-4c64-bcd1-6b68b8dd62a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -102,6 +108,9 @@
     <ClCompile Include="Room.cpp">
       <Filter>소스 파일\StageManager\Room</Filter>
     </ClCompile>
+    <ClCompile Include="MessagePost.cpp">
+      <Filter>소스 파일\System\Message</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Font.h">
@@ -151,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="Room.h">
       <Filter>소스 파일\StageManager\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageFrom.h">
+      <Filter>소스 파일\System\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="MessagePost.h">
+      <Filter>소스 파일\System\Message</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
