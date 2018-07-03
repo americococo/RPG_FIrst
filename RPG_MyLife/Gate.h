@@ -19,7 +19,7 @@ public:
 	Gate();
 	~Gate();
 
-	void Init(int posX,int posY,eDirection GateDirection);
+	void Init(float posX,float posY,eDirection GateDirection);
 	void Update(float deltaTime);
 	void render();
 	void DeInit();

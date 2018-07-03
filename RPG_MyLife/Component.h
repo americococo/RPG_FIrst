@@ -3,6 +3,8 @@
 #include "MessageFrom.h"
 
 class Sprite;
+
+
 enum eComponentType
 {
 	PlAYER,
@@ -19,7 +21,7 @@ public:
 	Component();
 	~Component();
 
-	virtual void Init(int posX,int posY);
+	virtual void Init(float posX,float posY);
 	virtual void Update(float deltaTime);
 	virtual void render();
 	virtual void DeInit();
@@ -29,15 +31,22 @@ public:
 protected:
 	eComponentType _ObjectType;
 
-	int _posX;
-	int _posY;
+	float _posX;
+	float _posY;
 
 	
 	Sprite * _sprite;
 
+
+
 public:
 	eComponentType GetComponentType();
 
+
+
+public:
+	int GetPosX() { return _posX; }
+	int GetPosY() { return _posY; }
 
 
 	//메세지 수신

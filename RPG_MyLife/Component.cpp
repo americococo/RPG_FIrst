@@ -23,7 +23,7 @@ void Component::ReciverMessage(MessageFrom msgFrom)
 	}
 }
 
-void Component::Init(int posX,int posY)
+void Component::Init(float posX,float posY)
 {
 	_posX = posX;
 	_posY = posY;

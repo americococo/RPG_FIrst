@@ -1,20 +1,28 @@
 #pragma once
 
-#include "Component.h"
+#include "MoveObject.h"
 
-class Player :public Component
+
+enum eDirection;
+class Player :public MoveObject
 {
 public:
 	Player();
 	~Player();
 
 
-	/*overRide*/void Init(int posX, int posY);
+	/*overRide*/void Init(float posX, float posY);
 	/*overRide*/void render();
 
 	/*overRide*/void Update(float dletaTime);
 
 
 private:
+
+	
+
+public:
+
+	eDirection GetDirection() { return _direction; }
 
 };

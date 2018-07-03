@@ -1,5 +1,9 @@
 #include "StageManager.h"
 #include "Stage.h"
+
+
+#include "GameSystem.h"
+
 #include <list>
 #include <string>
 StageManager * StageManager::_instance = nullptr;
@@ -28,6 +32,8 @@ void StageManager::Init()
 		stage->Init();
 		_stageList.push_back(stage);
 	}
+
+	GameSystem::GetInstance()->InitInput();
 
 	_stage = _stageList.front();
 

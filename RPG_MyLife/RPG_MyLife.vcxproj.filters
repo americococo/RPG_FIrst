@@ -55,6 +55,15 @@
     <Filter Include="소스 파일\System\Message">
       <UniqueIdentifier>{21618219-b7b0-4c64-bcd1-6b68b8dd62a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\1.Game\Component\MoveObject\State">
+      <UniqueIdentifier>{596dbb88-b75c-4aac-81f7-cad61ff3e0e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Global">
+      <UniqueIdentifier>{38fa367c-013a-489c-b500-50d89ac5a6eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\1.Game\Component\MoveObject\Player">
+      <UniqueIdentifier>{2c5d8e5d-7cc4-47a3-8b2a-fe2eba08354d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -111,8 +120,14 @@
     <ClCompile Include="MessagePost.cpp">
       <Filter>소스 파일\System\Message</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
+    <ClCompile Include="State.cpp">
+      <Filter>소스 파일\1.Game\Component\MoveObject\State</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveObject.cpp">
       <Filter>소스 파일\1.Game\Component\MoveObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\1.Game\Component\MoveObject\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -170,8 +185,17 @@
     <ClInclude Include="MessagePost.h">
       <Filter>소스 파일\System\Message</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="State.h">
+      <Filter>소스 파일\1.Game\Component\MoveObject\State</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalType.h">
+      <Filter>소스 파일\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveObject.h">
       <Filter>소스 파일\1.Game\Component\MoveObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\1.Game\Component\MoveObject\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

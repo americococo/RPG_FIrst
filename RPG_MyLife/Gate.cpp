@@ -11,7 +11,7 @@ Gate::Gate()
 Gate::~Gate()
 {
 }
-void Gate::Init(int posX, int posY,eDirection GateDirection)
+void Gate::Init(float posX, float posY,eDirection GateDirection)
 {
 	_ObjectType = eComponentType::GATE;
 
