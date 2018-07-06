@@ -1,7 +1,19 @@
 #pragma once
 #include <map>
+
+
+enum eState
+{
+	ES_NONE,
+	ES_IDLE,
+	ES_MOVE,
+	ES_ATTACK,
+	ES_DEFEND,
+};
+
+
 enum eDirection;
-class Component;
+class MoveObject;
 class Sprite;
 class State
 {
@@ -13,19 +25,22 @@ public:
 
 public:
 
-	void Init(Component * character);
+	virtual	void Init(MoveObject * character);
 
 	void Start();
 
-	void render();
+	virtual	void render();
 
-	void Update(float dletaTime);
+	virtual	void Update(float dletaTime);
 
-	void Stop();
+	virtual	void Stop();
 
-private:	
-	Component * _character;
-	std::map<eDirection,Sprite*> _spriteVector;
+protected:
+	MoveObject * _character;
+	std::map<eDirection, Sprite*> _spriteVector;
+
+
+	eState _nextState;
 	
 
 	void createSprite();

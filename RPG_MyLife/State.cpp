@@ -1,7 +1,7 @@
 #include "State.h"
 
-#include "Component.h"
-#include "Player.h"
+#include "MoveObject.h"
+
 
 #include "Sprite.h"
 #include "GlobalType.h"
@@ -15,7 +15,7 @@ State::~State()
 {
 }
 
-void State::Init(Component * character)
+void State::Init(MoveObject * character)
 {
 	_character = character;
 	createSprite();
@@ -78,19 +78,19 @@ void State::createSprite()
 }
 void State::Start()
 {
-
+	_nextState = eState::ES_NONE;
 }	
 
 void State::render()
 {
-	_spriteVector[((Player*)(_character))->GetDirection()]->setPostition(_character->GetPosX(), _character->GetPosY());
-	_spriteVector[((Player*)(_character))->GetDirection()]->render();
+	_spriteVector[_character->GetDirection()]->setPostition(_character->GetPosX(), _character->GetPosY());
+	_spriteVector[_character->GetDirection()]->render();
 
 }
 
 void State::Update(float deltaTime)
 {
-	_spriteVector[((Player*)(_character))->GetDirection()]->Update(deltaTime);
+	_spriteVector[_character->GetDirection()]->Update(deltaTime);
 }
 
 void State::Stop()

@@ -149,6 +149,7 @@
     <ClCompile Include="GameSystem.cpp" />
     <ClCompile Include="gameTimer.cpp" />
     <ClCompile Include="Gate.cpp" />
+    <ClCompile Include="IdleState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessagePost.cpp" />
     <ClCompile Include="MoveObject.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="gameTimer.h" />
     <ClInclude Include="Gate.h" />
     <ClInclude Include="GlobalType.h" />
+    <ClInclude Include="IdleState.h" />
     <ClInclude Include="MessageFrom.h" />
     <ClInclude Include="MessagePost.h" />
     <ClInclude Include="MoveObject.h" />

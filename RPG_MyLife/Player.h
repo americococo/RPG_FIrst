@@ -23,6 +23,6 @@ private:
 
 public:
 
-	eDirection GetDirection() { return _direction; }
+
 
 };
