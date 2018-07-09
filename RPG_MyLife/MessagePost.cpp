@@ -2,6 +2,7 @@
 #include "MessageFrom.h"
 
 #include "Component.h"
+
 MessagePost *  MessagePost::_instance = nullptr;
 
 MessagePost *  MessagePost::GetInstance()
@@ -14,18 +15,19 @@ MessagePost *  MessagePost::GetInstance()
 }
 void MessagePost::Clear()
 {
-	while (false==_postBox.empty())
+	while (0<_postBox.size())
 	{
 		_postBox.pop();
 	}
 }
 MessagePost::MessagePost()
 {
+	
 }
 MessagePost::~MessagePost()
 {
 }
-void MessagePost::SendMessage(MessageFrom & messageFrom)
+void MessagePost::SendMessageW(const MessageFrom & messageFrom)
 {
 	_postBox.push(messageFrom);
 }

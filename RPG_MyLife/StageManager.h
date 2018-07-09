@@ -21,4 +21,8 @@ public:
 private:
 	Stage * _stage;
 	std::list<Stage*> _stageList;
+
+
+public:
+	Stage * GetStage() { return _stage; }
 };

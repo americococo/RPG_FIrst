@@ -1,8 +1,8 @@
 #pragma once
 #include "Component.h"
-#include "MessageFrom.h"
 
-enum eDirection
+
+enum eDirectionGATE
 {
 	NONERoom,
 	LEFTRoom,
@@ -19,7 +19,7 @@ public:
 	Gate();
 	~Gate();
 
-	void Init(float posX,float posY,eDirection GateDirection);
+	void Init(float posX,float posY,int mapX,int mapY,eDirectionGATE GateDirection);
 	void Update(float deltaTime);
 	void render();
 	void DeInit();
@@ -30,11 +30,11 @@ public:
 
 private:
 
-	eDirection _GateDirection;
-
+	eDirectionGATE _GateDirection;
 
 
 public:
-	void ReciverMessage(MessageFrom msgFrom);
+	void SetGateDirection(eDirectionGATE direction);
+
 };
 

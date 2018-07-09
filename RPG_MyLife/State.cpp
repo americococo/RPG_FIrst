@@ -50,6 +50,10 @@ void State::createSprite()
 		Sprite * _sprite = new Sprite(textureFileName, scriptFileName);
 		_sprite->Init();
 		_spriteVector[eDirection::LEFT] = _sprite;
+
+		int avg= (_sprite->GetWidth() + _sprite->Getheight())/2;
+ 		float avg2= avg / 2;
+		_character->SetRadius(avg2);
 	}
 
 	//right

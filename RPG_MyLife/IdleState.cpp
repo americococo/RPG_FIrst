@@ -22,25 +22,35 @@ void IdleState::Update(float deltaTime)
 		return;
 	}
 
+
+	eDirection direction=eDirection::NONEDIRCTION;
+
 	if (GameSystem::GetInstance()->IsKeyDown(VK_LEFT))
 	{
 		_character->SetDirection(eDirection::LEFT);
+		direction = eDirection::LEFT;
 	}
 	if (GameSystem::GetInstance()->IsKeyDown(VK_RIGHT))
 	{
 		_character->SetDirection(eDirection::RIGHT);
+		direction = eDirection::RIGHT;
 	}
 
 	if (GameSystem::GetInstance()->IsKeyDown(VK_UP))
 	{
 		_character->SetDirection(eDirection::UP);
-		
+		direction = eDirection::UP;
 	}
 	if (GameSystem::GetInstance()->IsKeyDown(VK_DOWN))
 	{
 		_character->SetDirection(eDirection::DOWN);
-		
+		direction = eDirection::DOWN;
 	}
+
+	if (eDirection::NONEDIRCTION != direction)
+		_nextState = eState::ES_MOVE;
+
+
 
 }
 

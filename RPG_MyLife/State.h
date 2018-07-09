@@ -25,9 +25,9 @@ public:
 
 public:
 
-	virtual	void Init(MoveObject * character);
+	void Init(MoveObject * character);
 
-	void Start();
+	virtual void Start();
 
 	virtual	void render();
 

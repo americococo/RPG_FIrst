@@ -1,5 +1,7 @@
 #include "Component.h"
-#include "MessageFrom.h"
+
+#include "Sprite.h"
+
 
 Component::Component()
 {
@@ -15,6 +17,12 @@ eComponentType Component::GetComponentType()
 {
 	return _ObjectType;
 }
+
+void Component::SetPos(int posX, int posY)
+{
+	_posX = posX; _posY = posY;
+	_sprite->setPostition(_posX, _posY);
+}
 void Component::ReciverMessage(MessageFrom msgFrom)
 {
 	if (L"Collison" == msgFrom.message)
@@ -23,10 +31,15 @@ void Component::ReciverMessage(MessageFrom msgFrom)
 	}
 }
 
-void Component::Init(float posX,float posY)
+void Component::Init(float posX,float posY,int mapX,int mapY)
 {
 	_posX = posX;
 	_posY = posY;
+
+	_mapX = mapX;
+	_mapY = mapY;
+
+	_ObjectType = eComponentType::NONE;
 }
 void Component::Update(float deltaTime)
 {

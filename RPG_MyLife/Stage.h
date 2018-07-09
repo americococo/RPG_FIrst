@@ -30,5 +30,8 @@ private:
 
 	
 	std::map<std::pair<int,int >,Room*> _roomList;
+
+public:
+	Room * GetRoom(int mapX,int mapY);
 };
 

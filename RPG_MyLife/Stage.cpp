@@ -70,11 +70,15 @@ void Stage::Init()
 }
 void Stage::Update(float deltaTime)
 {
-	
+
+
+
 	std::map<std::pair<int,int>, Room*>::iterator itr;
 	for (itr = _roomList.begin(); itr != _roomList.end(); itr++)
 	{
-		itr->second->Update(deltaTime);
+
+		if (true == itr->second->CheckPlayer())
+			itr->second->Update(deltaTime);
 	}
 }
 void Stage::render()
@@ -83,10 +87,16 @@ void Stage::render()
 
 	for (itr = _roomList.begin(); itr != _roomList.end(); itr++)
 	{
-		itr->second->render();
+		if (true == itr->second->CheckPlayer())
+			itr->second->render();
 	}
 }
+Room * Stage::GetRoom(int mapX,int mapY)
+{
+	std::pair<int, int> p = std::make_pair(mapX,mapY);
 
+	return _roomList[p];
+}
 bool Stage::checkingClearStage()
 {
 	return false;// 스테이지 클리어

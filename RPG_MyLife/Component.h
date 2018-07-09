@@ -21,7 +21,7 @@ public:
 	Component();
 	~Component();
 
-	virtual void Init(float posX,float posY);
+	virtual void Init(float posX,float posY,int mapX,int mapY);
 	virtual void Update(float deltaTime);
 	virtual void render();
 	virtual void DeInit();
@@ -45,9 +45,23 @@ public:
 
 
 public:
-	int GetPosX() { return _posX; }
-	int GetPosY() { return _posY; }
+	float GetPosX() { return _posX; }
+	float GetPosY() { return _posY; }
 
+	void SetPos(int posX, int posY);
+
+
+
+protected:
+	int _mapX;
+	int _mapY;
+
+
+	float _radius;
+
+public:
+	float GetRadius() { return _radius; }
+	void SetRadius(float radius) { _radius = radius; }
 
 	//메세지 수신
 public:

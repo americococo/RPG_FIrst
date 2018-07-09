@@ -63,6 +63,16 @@ void Sprite::Init()
 
 	_frameTime = 0.0f;
 }
+int Sprite::GetWidth()
+{
+	return _frameList[_currentFrame]->GetWidth();
+}
+
+int Sprite::Getheight()
+{
+	return _frameList[_currentFrame]->GetHeight();
+}
+
 
 void Sprite::Init(int srcX, int srcY, int width, int height, float delay)
 {

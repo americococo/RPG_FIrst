@@ -60,4 +60,10 @@ private:
 
 private:
 	Texture * _srcTexture;
+
+
+
+public:
+	int GetWidth();
+	int Getheight();
 };

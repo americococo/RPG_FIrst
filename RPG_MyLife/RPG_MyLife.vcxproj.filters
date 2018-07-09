@@ -132,6 +132,9 @@
     <ClCompile Include="IdleState.cpp">
       <Filter>소스 파일\1.Game\Component\MoveObject\State</Filter>
     </ClCompile>
+    <ClCompile Include="MoveState.cpp">
+      <Filter>소스 파일\1.Game\Component\MoveObject\State</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Font.h">
@@ -201,6 +204,9 @@
       <Filter>소스 파일\1.Game\Component\MoveObject\Player</Filter>
     </ClInclude>
     <ClInclude Include="IdleState.h">
+      <Filter>소스 파일\1.Game\Component\MoveObject\State</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveState.h">
       <Filter>소스 파일\1.Game\Component\MoveObject\State</Filter>
     </ClInclude>
   </ItemGroup>

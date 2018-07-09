@@ -4,10 +4,10 @@
 enum eRoomCodeDecode
 {
 	PlayerStart,
-	LEFT,
-	RIGHT,
-	UP,
-	DOWN,
+	LEFTDOOR,
+	RIGHTDOOR,
+	UPDOOR,
+	DOWNDOOR,
 	IsItem,
 	IsEnemy,
 	IsBossRoom
@@ -38,10 +38,15 @@ private:
 	std::list<Component*> _componentList;
 	
 
-	bool CheckPlayer();
+
 
 
 	void CreateRoomGate(eRoomCodeDecode roomcode);
 
+
+public:
+	std::list<Component*> GetComponentList();
+
+	bool CheckPlayer();
 };
 
