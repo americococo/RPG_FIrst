@@ -1,6 +1,9 @@
 #pragma once
 #include "Component.h"
 
+#include "MessageFrom.h"
+
+
 
 enum eDirectionGATE
 {
@@ -35,6 +38,10 @@ private:
 
 public:
 	void SetGateDirection(eDirectionGATE direction);
+
+
+public:
+	void ReciverMessage(MessageFrom msgFrom);
 
 };
 

@@ -38,7 +38,7 @@ protected:
 
 	
 
-
+	void SetPos(float posX, float posY);
 
 
 

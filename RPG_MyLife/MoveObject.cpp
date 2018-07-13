@@ -89,7 +89,11 @@ void MoveObject::MoveStart(int posx,int posy)
 	
 
 }
-
+void MoveObject::SetPos(float posX, float posY)
+{
+	_posX = posX;
+	_posY = posY;
+}
 void MoveObject::ReplaceState(eState stateType,State * changeState)
 {
 	std::map<eState, State*>::iterator itr = _StateMap.find(stateType);

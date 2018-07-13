@@ -31,8 +31,6 @@ void Player:: Init(float posX, float posY,int mapX,int mapY)
 	ReplaceState(eState::ES_MOVE, new MoveState());
 
 	ChangeState(eState::ES_IDLE);
-
-
 }
 
 void Player::render()

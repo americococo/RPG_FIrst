@@ -18,7 +18,7 @@ eComponentType Component::GetComponentType()
 	return _ObjectType;
 }
 
-void Component::SetPos(int posX, int posY)
+void Component::SetPos(float posX, float posY)
 {
 	_posX = posX; _posY = posY;
 	_sprite->setPostition(_posX, _posY);

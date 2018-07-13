@@ -3,10 +3,11 @@
 #include "Room.h"
 #include "Component.h"
 
-#include "Gate.h"
+
 
 #include "Player.h"
 #include "MessagePost.h"
+
 
 Room::Room()
 {
@@ -31,16 +32,17 @@ void Room::Init(char * RoomCode,int posx,int posy)
 	}
 
 
-	if (RoomCode[eRoomCodeDecode::LEFTDOOR] == 'o')
-		CreateRoomGate(eRoomCodeDecode::LEFTDOOR);
-	if (RoomCode[eRoomCodeDecode::RIGHTDOOR] == 'o')
-		CreateRoomGate(eRoomCodeDecode::RIGHTDOOR);
 	
-	if (RoomCode[eRoomCodeDecode::UPDOOR] == 'o')
-		CreateRoomGate(eRoomCodeDecode::UPDOOR);
+		CreateRoomGate(eRoomCodeDecode::LEFTDOOR,0, GameSystem::GetInstance()->GetHeight() / 2,eDirectionGATE::LEFTRoom);
 
-	if (RoomCode[eRoomCodeDecode::DOWNDOOR] == 'o')
-		CreateRoomGate(eRoomCodeDecode::DOWNDOOR);
+	
+		CreateRoomGate(eRoomCodeDecode::RIGHTDOOR, GameSystem::GetInstance()->GetWidth(), GameSystem::GetInstance()->GetHeight() / 2,eDirectionGATE::RIGHTRoom);
+	
+	
+		CreateRoomGate(eRoomCodeDecode::UPDOOR, GameSystem::GetInstance()->GetWidth() / 2, 0, eDirectionGATE::UPRoom);
+
+
+		CreateRoomGate(eRoomCodeDecode::DOWNDOOR, GameSystem::GetInstance()->GetWidth() / 2, GameSystem::GetInstance()->GetHeight(), eDirectionGATE::DOWNRoom);
 
 
 
@@ -60,42 +62,32 @@ std::list<Component*> Room::GetComponentList()
 	return _componentList;
 }
 
-void Room::CreateRoomGate(eRoomCodeDecode roomcode)
+void Room::CreateRoomGate(eRoomCodeDecode roomcode, int gateposX, int gateposY,eDirectionGATE gateDirectioon)
 {
-	int gatePosX=0, gatePosY=0;
-	eDirectionGATE direction=eDirectionGATE::NONERoom;
+	if (_roomCode[roomcode] != 'o')
+		return;
+
+	
 
 	Gate * gate = new Gate();
-	gate->Init(gatePosX, gatePosY, _posX, _posY, direction);
+	gate->Init(gateposX, gateposY, _posX, _posY, gateDirectioon);
 
- 	switch (roomcode)
-	{
-	case eRoomCodeDecode::LEFTDOOR:
-		gatePosX = 0 + gate->GetRadius();
-		gatePosY = GameSystem::GetInstance()->GetHeight()/2;
-		direction = eDirectionGATE::LEFTRoom;
-		break;
-	case eRoomCodeDecode::RIGHTDOOR:
-		gatePosX= GameSystem::GetInstance()->GetWidth()- gate->GetRadius();
-		gatePosY = GameSystem::GetInstance()->GetHeight() / 2;
-		direction = eDirectionGATE::RIGHTRoom;
-		break;
-	case eRoomCodeDecode::UPDOOR:
-		gatePosX = GameSystem::GetInstance()->GetWidth()/2;
-		gatePosY = 0 + gate->GetRadius();
-		direction = eDirectionGATE::UPRoom;
-		break;
-	case eRoomCodeDecode::DOWNDOOR:
-		gatePosX = GameSystem::GetInstance()->GetWidth() / 2;
-		gatePosY = GameSystem::GetInstance()->GetHeight() - gate->GetRadius();
-		direction = eDirectionGATE::DOWNRoom;
-		break;
 
-	}
+	if (gateposX == 0)
+		gateposX += gate->GetRadius();
 
-	gate->SetPos(gatePosX, gatePosY);
+	else if (gateposX == GameSystem::GetInstance()->GetWidth())
+		gateposX -= gate->GetRadius();
+
+	if (gateposY == 0)
+		gateposY += gate->GetRadius();
+
+	else if (gateposY == GameSystem::GetInstance()->GetHeight())
+		gateposY -= gate->GetRadius();
+
+
+	gate->SetPos(gateposX, gateposY);
 	
-	gate->SetGateDirection(direction);
 	_componentList.push_back(gate);
 
 }
@@ -104,6 +96,8 @@ void Room::Update(float deltaTime)
 {
 
 	MessagePost::GetInstance()->ProcessMessageQueue();
+
+	removeUpdate();
 	
 	for (std::list<Component*>::iterator itr = _componentList.begin(); itr != _componentList.end(); itr++)
 	{
@@ -117,4 +111,26 @@ void Room::render()
 	{
 		(*itr)->render();
 	}
+}
+void Room::removeUpdate()
+{
+	while (_removeList.empty()==false)
+	{
+		Component * com = _removeList.front();
+		_componentList.remove(com);
+		_removeList.remove(com);
+
+		
+	}
+}
+void Room::AddremoveList(Component * removeComponent)
+{
+	_removeList.push_back(removeComponent);
+}
+
+void Room::AddComponent(Component * component)
+{
+	component->SetMapPosition(_posX, _posY);
+	component->SetPos(GameSystem::GetInstance()->GetWidth() / 2, GameSystem::GetInstance()->GetHeight() / 2);
+	_componentList.push_back(component);
 }

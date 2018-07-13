@@ -48,7 +48,7 @@ public:
 	float GetPosX() { return _posX; }
 	float GetPosY() { return _posY; }
 
-	void SetPos(int posX, int posY);
+	virtual void SetPos(float posX, float posY);
 
 
 
@@ -62,6 +62,9 @@ protected:
 public:
 	float GetRadius() { return _radius; }
 	void SetRadius(float radius) { _radius = radius; }
+
+
+	void SetMapPosition(int mapX, int maY) { _mapX = mapX; _mapY = maY; }
 
 	//메세지 수신
 public:
