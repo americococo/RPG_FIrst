@@ -21,7 +21,6 @@ eComponentType Component::GetComponentType()
 void Component::SetPos(float posX, float posY)
 {
 	_posX = posX; _posY = posY;
-	_sprite->setPostition(_posX, _posY);
 }
 void Component::ReciverMessage(MessageFrom msgFrom)
 {

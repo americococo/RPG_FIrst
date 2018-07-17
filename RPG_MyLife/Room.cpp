@@ -8,6 +8,7 @@
 #include "Player.h"
 #include "MessagePost.h"
 
+#include "Item.h"
 
 Room::Room()
 {
@@ -17,34 +18,41 @@ Room::Room()
 Room::~Room()
 {
 }
-void Room::Init(char * RoomCode,int posx,int posy)
+void Room::Init(char * RoomCode, int posx, int posy)
 {
 	_posX = posx;
 	_posY = posy;
-	
+
 	_roomCode = RoomCode;
 
 	if (RoomCode[eRoomCodeDecode::PlayerStart] == 'o')
 	{
-		Player * player = new Player();
-		player->Init(GameSystem::GetInstance()->GetWidth() / 2, GameSystem::GetInstance()->GetHeight() / 2,_posX,_posY);
+		Component* player = new Player();
+		player->Init(GameSystem::GetInstance()->GetWidth() / 2, GameSystem::GetInstance()->GetHeight() / 2, _posX, _posY);
 		_componentList.push_back(player);
 	}
 
 
-	
-		CreateRoomGate(eRoomCodeDecode::LEFTDOOR,0, GameSystem::GetInstance()->GetHeight() / 2,eDirectionGATE::LEFTRoom);
 
-	
-		CreateRoomGate(eRoomCodeDecode::RIGHTDOOR, GameSystem::GetInstance()->GetWidth(), GameSystem::GetInstance()->GetHeight() / 2,eDirectionGATE::RIGHTRoom);
-	
-	
-		CreateRoomGate(eRoomCodeDecode::UPDOOR, GameSystem::GetInstance()->GetWidth() / 2, 0, eDirectionGATE::UPRoom);
+	CreateRoomGate(eRoomCodeDecode::LEFTDOOR, 0, GameSystem::GetInstance()->GetHeight() / 2, eDirectionGATE::LEFTRoom);
 
 
-		CreateRoomGate(eRoomCodeDecode::DOWNDOOR, GameSystem::GetInstance()->GetWidth() / 2, GameSystem::GetInstance()->GetHeight(), eDirectionGATE::DOWNRoom);
+	CreateRoomGate(eRoomCodeDecode::RIGHTDOOR, GameSystem::GetInstance()->GetWidth(), GameSystem::GetInstance()->GetHeight() / 2, eDirectionGATE::RIGHTRoom);
 
 
+	CreateRoomGate(eRoomCodeDecode::UPDOOR, GameSystem::GetInstance()->GetWidth() / 2, 0, eDirectionGATE::UPRoom);
+
+
+	CreateRoomGate(eRoomCodeDecode::DOWNDOOR, GameSystem::GetInstance()->GetWidth() / 2, GameSystem::GetInstance()->GetHeight(), eDirectionGATE::DOWNRoom);
+
+
+	if (RoomCode[eRoomCodeDecode::IsItem] == 'o')
+	{
+		Item * item = new Item();
+		item->Init(300, 300, _posX, _posY);
+
+		_componentList.push_back(item);
+	}
 
 
 }
@@ -62,12 +70,12 @@ std::list<Component*> Room::GetComponentList()
 	return _componentList;
 }
 
-void Room::CreateRoomGate(eRoomCodeDecode roomcode, int gateposX, int gateposY,eDirectionGATE gateDirectioon)
+void Room::CreateRoomGate(eRoomCodeDecode roomcode, int gateposX, int gateposY, eDirectionGATE gateDirectioon)
 {
 	if (_roomCode[roomcode] != 'o')
 		return;
 
-	
+
 
 	Gate * gate = new Gate();
 	gate->Init(gateposX, gateposY, _posX, _posY, gateDirectioon);
@@ -87,7 +95,7 @@ void Room::CreateRoomGate(eRoomCodeDecode roomcode, int gateposX, int gateposY,e
 
 
 	gate->SetPos(gateposX, gateposY);
-	
+
 	_componentList.push_back(gate);
 
 }
@@ -98,7 +106,7 @@ void Room::Update(float deltaTime)
 	MessagePost::GetInstance()->ProcessMessageQueue();
 
 	removeUpdate();
-	
+
 	for (std::list<Component*>::iterator itr = _componentList.begin(); itr != _componentList.end(); itr++)
 	{
 		(*itr)->Update(deltaTime);
@@ -114,13 +122,13 @@ void Room::render()
 }
 void Room::removeUpdate()
 {
-	while (_removeList.empty()==false)
+	while (_removeList.empty() == false)
 	{
 		Component * com = _removeList.front();
 		_componentList.remove(com);
 		_removeList.remove(com);
 
-		
+
 	}
 }
 void Room::AddremoveList(Component * removeComponent)

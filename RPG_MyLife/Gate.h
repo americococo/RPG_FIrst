@@ -1,5 +1,5 @@
 #pragma once
-#include "Component.h"
+#include "FixedObject.h"
 
 #include "MessageFrom.h"
 
@@ -15,7 +15,7 @@ enum eDirectionGATE
 };
 
 
-class Gate : public Component
+class Gate : public FixedObject
 {
 
 public:

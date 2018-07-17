@@ -11,6 +11,7 @@ enum eComponentType
 	ENEMY,
 	GATE,
 	OBJECT,
+	ITEM,
 	NONE,
 };
 
@@ -35,7 +36,7 @@ protected:
 	float _posY;
 
 	
-	Sprite * _sprite;
+
 
 
 
@@ -55,6 +56,8 @@ public:
 protected:
 	int _mapX;
 	int _mapY;
+
+
 
 
 	float _radius;

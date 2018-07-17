@@ -13,19 +13,16 @@ Gate::~Gate()
 }
 void Gate::Init(float posX, float posY,int mapX,int mapY,eDirectionGATE GateDirection)
 {
-	Component::Init(posX, posY, mapX, mapY);
+	FixedObject::Init(posX, posY, mapX, mapY, L"./Sprite/Gate/Gate.png", L"./Sprite/Gate/Gate.json");
 	_ObjectType = eComponentType::GATE;
 
 	_GateDirection = GateDirection;
-
-	_sprite = new Sprite(L"./Sprite/Gate/Gate.png", L"./Sprite/Gate/Gate.json");
-	_sprite->Init();
-	_sprite->setPostition(_posX, _posY);
-
-	_radius =( (_sprite->GetWidth() + _sprite->Getheight() ) /2) /2;
 }
 void Gate::ReciverMessage(MessageFrom msgFrom)
 {
+
+	FixedObject::ReciverMessage(msgFrom);
+
 	if (L"Collison" == msgFrom.message)
 	{
 		Component * sender =msgFrom.sender;
@@ -70,14 +67,14 @@ void Gate::SetGateDirection(eDirectionGATE direction)
 }
 void Gate::Update(float deltaTime)
 {
-	_sprite->Update(deltaTime);
+	FixedObject::Update(deltaTime);
 }
 void Gate::render()
 {
-	_sprite->render();
+	FixedObject::render();
 }
 void Gate::DeInit()
 {
-
+	FixedObject::DeInit();
 }
 

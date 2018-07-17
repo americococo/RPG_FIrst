@@ -28,7 +28,7 @@ void StageManager::Init()
 {
 	{
 
-		Stage * stage = new Stage(L"./RoomData/TestFile1.csv");
+		Stage * stage = new Stage(L"./RoomData/TestFile.csv");
 		stage->Init();
 		_stageList.push_back(stage);
 	}
