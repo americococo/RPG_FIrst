@@ -1,6 +1,10 @@
 #include "Item.h"
-
 #include "Sprite.h"
+
+
+#include "StageManager.h"
+#include "Stage.h"
+#include "Room.h"
 
 Item::Item()
 {
@@ -21,6 +25,14 @@ void Item::Init(float posX, float posY, int mapX, int mapY)
 void Item::ReciverMessage(MessageFrom msgFrom)
 {
 
+	if (L"UseItem" == msgFrom.message)
+	{
+		StageManager::GetInstance()->GetStage()->GetRoom(_mapX, _mapY)->AddremoveList(this);
+		_sprite->deInit();
+		delete this;
+		return;
+	}
+	
 }
 
 void Item::Update(float deltaTime)
