@@ -26,9 +26,9 @@ Player::~Player()
 
 }
 
-void Player:: Init(float posX, float posY,int mapX,int mapY)
+void Player:: Init(float posX, float posY,int mapX,int mapY,int hp,float power)
 {
-	MoveObject::Init(posX, posY, mapX, mapY);
+	MoveObject::Init(posX, posY, mapX, mapY,hp,power);
 
 	_ObjectType = eComponentType::PlAYER;
 
@@ -42,7 +42,8 @@ void Player:: Init(float posX, float posY,int mapX,int mapY)
 
 void Player::render()
 {
-	_state->render();
+	MoveObject::render();
+	
 }
 
 void Player::Update(float deltaTime)

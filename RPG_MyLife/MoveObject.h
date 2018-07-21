@@ -7,11 +7,19 @@
 
 
 
+#include <queue>
+
+
+
 
 enum eState;
 
 class State;
 
+
+
+
+class EquipItem;
 class MoveObject :	public Component
 {
 public:
@@ -20,7 +28,10 @@ public:
 
 
 
-	void Init(float posX, float posY, int mapX, int mapY);
+	void Init(float posX, float posY, int mapX, int mapY,int hp,float _power);
+
+
+	void render();
 protected:
 	eDirection _direction;
 
@@ -53,5 +64,19 @@ public:
 
 protected:
 
+	int _hp;
+	float _power;
+
+public:
+	void AffectHp(int affecthealth) { _hp += affecthealth; }
+	void AffectPower(float affecthealth) { _power += affecthealth; }
+
+	
+
+protected:
+	std::queue < EquipItem*> _equipItem;
+
+public:
+	void MountEquipItem(EquipItem * item);
 };
 

@@ -61,14 +61,20 @@
     <Filter Include="소스 파일\1.Game\Component\MoveObject\Player">
       <UniqueIdentifier>{2c5d8e5d-7cc4-47a3-8b2a-fe2eba08354d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\1.Game\Component\FixedObject%28움직이지않음">
+    <Filter Include="소스 파일\1.Game\Component\FixedObject%28움직이지않음%29">
       <UniqueIdentifier>{60fe7375-d868-4ea7-af66-6682e532bcbd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\1.Game\Component\FixedObject%28움직이지않음\Gate">
+    <Filter Include="소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Gate">
       <UniqueIdentifier>{4a5260b1-ef26-468a-aa69-751734b311f8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\1.Game\Component\FixedObject%28움직이지않음\Item">
+    <Filter Include="소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item">
       <UniqueIdentifier>{24725141-ec41-42d1-a090-8042b4ff4c00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\usingItem">
+      <UniqueIdentifier>{29eb46ab-7ab9-46ba-bbd9-a1967f73857d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\EquimentItem">
+      <UniqueIdentifier>{094e97ea-2cc4-4f18-a6f9-de68c0a373b1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -118,7 +124,7 @@
       <Filter>소스 파일\StageManager\Stage</Filter>
     </ClCompile>
     <ClCompile Include="Gate.cpp">
-      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음\Gate</Filter>
+      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Gate</Filter>
     </ClCompile>
     <ClCompile Include="Room.cpp">
       <Filter>소스 파일\StageManager\Room</Filter>
@@ -142,10 +148,16 @@
       <Filter>소스 파일\1.Game\Component\MoveObject\State</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
-      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음\Item</Filter>
+      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item</Filter>
     </ClCompile>
     <ClCompile Include="FixedObject.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="UsingItem.cpp">
+      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\usingItem</Filter>
+    </ClCompile>
+    <ClCompile Include="EquipItem.cpp">
+      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\EquimentItem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -192,7 +204,7 @@
       <Filter>소스 파일\StageManager\Stage</Filter>
     </ClInclude>
     <ClInclude Include="Gate.h">
-      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음\Gate</Filter>
+      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Gate</Filter>
     </ClInclude>
     <ClInclude Include="Room.h">
       <Filter>소스 파일\StageManager\Room</Filter>
@@ -222,10 +234,16 @@
       <Filter>소스 파일\1.Game\Component\MoveObject\State</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
-      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음\Item</Filter>
+      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item</Filter>
     </ClInclude>
     <ClInclude Include="FixedObject.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="UsingItem.h">
+      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\usingItem</Filter>
+    </ClInclude>
+    <ClInclude Include="EquipItem.h">
+      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\EquimentItem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

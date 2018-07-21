@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp" />
+    <ClCompile Include="EquipItem.cpp" />
     <ClCompile Include="FixedObject.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Frame.cpp" />
@@ -167,9 +168,11 @@
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="UsingItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h" />
+    <ClInclude Include="EquipItem.h" />
     <ClInclude Include="FixedObject.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="Frame.h" />
@@ -195,6 +198,7 @@
     <ClInclude Include="State.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="UsingItem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

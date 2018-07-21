@@ -15,11 +15,12 @@ Item::~Item()
 {
 }
 
-void Item::Init(float posX, float posY, int mapX, int mapY)
+void Item::Init(float posX, float posY, int mapX, int mapY, LPCWSTR textureFileName, LPCWSTR scriptFileName)
 {
-	FixedObject::Init(posX, posY, mapX, mapY, L"./Sprite/Item/Item.png", L"./Sprite/Item/Item.json");
+	FixedObject::Init(posX, posY, mapX, mapY, textureFileName, scriptFileName);
 
 	_ObjectType = eComponentType::ITEM;
+	_itemType = eItemType::Item_NONE;
 }
 
 void Item::ReciverMessage(MessageFrom msgFrom)

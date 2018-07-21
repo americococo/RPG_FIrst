@@ -16,6 +16,8 @@
 #include "MessagePost.h"
 #include "MessageFrom.h"
 
+#include "EquipItem.h"
+
 MoveObject::MoveObject()
 {
 	_direction = eDirection::NONEDIRCTION;
@@ -30,11 +32,23 @@ MoveObject::MoveObject()
 MoveObject::~MoveObject()
 {
 }
-void MoveObject::Init(float posX, float posY, int mapX, int mapY)
+void MoveObject::Init(float posX, float posY, int mapX, int mapY,int hp,float power)
 {
 	Component::Init(posX, posY, mapX,mapY);
 
+	_hp = hp;
+	_power = power;
+}
 
+void MoveObject::render()
+{
+	if (false == _equipItem.empty())
+	{
+		EquipItem * item = _equipItem.front();
+		item->SetPos(_posX, _posY+10);
+		item->render();
+	}
+	_state->render();
 }
 void MoveObject::ChangeState(eState stateType)
 {
@@ -106,4 +120,12 @@ void MoveObject::ReplaceState(eState stateType,State * changeState)
 	State * state = changeState;
 	state->Init(this);
 	_StateMap[stateType] = changeState;
+}
+
+void MoveObject::MountEquipItem(EquipItem * item)
+{
+	if(false== _equipItem.empty())
+		_equipItem.pop();
+
+	_equipItem.push(item);
 }

@@ -3,6 +3,14 @@
 
 
 #include "MessageFrom.h"
+#include <Windows.h>
+
+enum eItemType
+{
+	Item_USING,
+	Item_EQUIMENT,
+	Item_NONE,
+};
 
 class Item : public FixedObject
 {
@@ -10,11 +18,18 @@ public:
 	Item();
 	~Item();
 
-	void Init(float posX, float posY, int mapX, int mapY);
-	void Update(float deltaTime);
-	void render();
-	void DeInit();
+	virtual	void Init(float posX, float posY, int mapX, int mapY, LPCWSTR textureFileName, LPCWSTR scriptFileName);
+	virtual void Update(float deltaTime);
+	virtual void render();
+	virtual void DeInit();
 
-	void ReciverMessage(MessageFrom msgFrom);
+	virtual void ReciverMessage(MessageFrom msgFrom);
+
+
+protected:
+	eItemType _itemType;
+
+public:
+	eItemType GetItemType() { return _itemType; }
 };
 
