@@ -24,6 +24,8 @@ void EquipItem::Init(float posX, float posY, int mapX, int mapY, LPCWSTR texture
 	Item::Init(posX, posY, mapX, mapY, textureFileName, scriptFileName);
 
 	_itemType = eItemType::Item_EQUIMENT;
+
+	_equipItemType = eEquipItemType::EquipITEM_NONE;
 }
 
 void EquipItem::ReciverMessage(MessageFrom msgFrom)

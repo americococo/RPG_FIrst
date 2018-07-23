@@ -14,6 +14,9 @@ MoveState::~MoveState()
 
 void MoveState::Start()
 {
+
+	State::Start();
+
 	eDirection direction = _character->GetDirection();
 
 	posx = 0;

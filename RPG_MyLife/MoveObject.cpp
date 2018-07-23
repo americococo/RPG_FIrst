@@ -42,13 +42,15 @@ void MoveObject::Init(float posX, float posY, int mapX, int mapY,int hp,float po
 
 void MoveObject::render()
 {
+	_state->render();
+
+
 	if (false == _equipItem.empty())
 	{
 		EquipItem * item = _equipItem.front();
-		item->SetPos(_posX, _posY+10);
+		item->SetPos(_posX, _posY + 10);
 		item->render();
 	}
-	_state->render();
 }
 void MoveObject::ChangeState(eState stateType)
 {

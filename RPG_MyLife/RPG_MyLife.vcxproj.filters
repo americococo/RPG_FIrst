@@ -76,6 +76,12 @@
     <Filter Include="소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\EquimentItem">
       <UniqueIdentifier>{094e97ea-2cc4-4f18-a6f9-de68c0a373b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\EquimentItem\EquipItemWeapon">
+      <UniqueIdentifier>{86bea7ca-e3ff-42b2-9e14-4515705aac70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\1.Game\Component\MoveObject\State\Attack">
+      <UniqueIdentifier>{6c5648fd-3229-4bee-9d4b-6d500ad887e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -158,6 +164,12 @@
     </ClCompile>
     <ClCompile Include="EquipItem.cpp">
       <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\EquimentItem</Filter>
+    </ClCompile>
+    <ClCompile Include="EquipItemWeapon.cpp">
+      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\EquimentItem\EquipItemWeapon</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackState.cpp">
+      <Filter>소스 파일\1.Game\Component\MoveObject\State\Attack</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -244,6 +256,12 @@
     </ClInclude>
     <ClInclude Include="EquipItem.h">
       <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\EquimentItem</Filter>
+    </ClInclude>
+    <ClInclude Include="EquipItemWeapon.h">
+      <Filter>소스 파일\1.Game\Component\FixedObject%28움직이지않음%29\Item\EquimentItem\EquipItemWeapon</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackState.h">
+      <Filter>소스 파일\1.Game\Component\MoveObject\State\Attack</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

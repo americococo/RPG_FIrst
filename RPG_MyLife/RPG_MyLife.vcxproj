@@ -142,8 +142,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AttackState.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="EquipItem.cpp" />
+    <ClCompile Include="EquipItemWeapon.cpp" />
     <ClCompile Include="FixedObject.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Frame.cpp" />
@@ -171,8 +173,10 @@
     <ClCompile Include="UsingItem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AttackState.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="EquipItem.h" />
+    <ClInclude Include="EquipItemWeapon.h" />
     <ClInclude Include="FixedObject.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="Frame.h" />

@@ -3,15 +3,15 @@
 #include "Room.h"
 #include "Component.h"
 
-
-
 #include "Player.h"
 #include "MessagePost.h"
 
-#include "Item.h"
 
+
+#include "Item.h"
 #include "UsingItem.h"
 #include "EquipItem.h"
+#include "EquipItemWeapon.h"
 Room::Room()
 {
 }
@@ -59,8 +59,15 @@ void Room::Init(char * RoomCode, int posx, int posy)
 			((UsingItem*)item)->Init(300, 300, _posX, _posY, L"./Sprite/Item/UsingItem.png", L"./Sprite/Item/UsingItem.json");
 			break;
 		case eItemType::Item_EQUIMENT:
-			item = new EquipItem();
-			((EquipItem*)item)->Init(300, 300, _posX, _posY, L"./Sprite/Item/EquipItem.png", L"./Sprite/Item/EquipItem.json");
+			switch (rand()%2)
+			{
+			case eEquipItemType::EquipITEM_CAP:
+				
+			case eEquipItemType::EquipITEM_WEAPON:
+				item = new EquipItemWeapon();
+				((EquipItemWeapon*)item)->Init(300, 300, _posX, _posY, L"./Sprite/Item/weapon.png", L"./Sprite/Item/weapon.json",30);
+				break;
+			}
 			break;
 		}
 

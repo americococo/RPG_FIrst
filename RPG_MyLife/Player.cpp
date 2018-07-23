@@ -7,6 +7,7 @@
 #include "State.h"
 #include "IdleState.h"
 #include "MoveState.h"
+#include "AttackState.h"
 
 #include "GameSystem.h"
 
@@ -16,6 +17,8 @@
 
 #include "MessagePost.h"
 
+#include "EquipItem.h"
+#include "EquipItemWeapon.h"
 Player::Player()
 {
 	_speed = 2.0f;
@@ -36,6 +39,7 @@ void Player:: Init(float posX, float posY,int mapX,int mapY,int hp,float power)
 
 	ReplaceState(eState::ES_IDLE, new IdleState());
 	ReplaceState(eState::ES_MOVE, new MoveState());
+	ReplaceState(eState::ES_ATTACK, new AttackState());
 
 	ChangeState(eState::ES_IDLE);
 }
@@ -85,5 +89,20 @@ void Player::Update(float deltaTime)
 				}
 			}
 		}
+
+		//if (false == _equipItem.empty())
+		//{
+		//	EquipItem * item = _equipItem.front();
+		//	if (eEquipItemType::EquipITEM_WEAPON == item->GetEquipType())
+		//	{
+		//		((EquipItemWeapon*)item)->ReduceDurability(30);
+		//		if (((EquipItemWeapon*)item)->GetDurability() >= 0)
+		//		{
+		//			_equipItem.pop();
+		//			item->DeInit();
+		//			delete item;
+		//		}
+		//	}
+		//}
 	}
 }

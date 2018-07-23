@@ -47,6 +47,11 @@ void IdleState::Update(float deltaTime)
 		direction = eDirection::DOWN;
 	}
 
+	if (GameSystem::GetInstance()->IsKeyDown(VK_CONTROL))
+	{
+		_nextState = eState::ES_ATTACK;
+	}
+
 	if (eDirection::NONEDIRCTION != direction)
 		_nextState = eState::ES_MOVE;
 
