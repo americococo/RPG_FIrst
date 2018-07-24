@@ -63,6 +63,9 @@ protected:
 	float _radius;
 
 public:
+	int GetMapX() { return _mapX; }
+	int GetMapY() { return _mapY; }
+
 	float GetRadius() { return _radius; }
 	void SetRadius(float radius) { _radius = radius; }
 
