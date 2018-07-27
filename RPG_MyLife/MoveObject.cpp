@@ -38,6 +38,9 @@ void MoveObject::Init(float posX, float posY, int mapX, int mapY,int hp,float po
 
 	_hp = hp;
 	_power = power;
+
+	_attackCoolTime = 0.3f;
+	_attackduraction = 0;
 }
 
 void MoveObject::render()

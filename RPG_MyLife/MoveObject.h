@@ -28,7 +28,7 @@ public:
 
 
 
-	void Init(float posX, float posY, int mapX, int mapY,int hp,float _power);
+	virtual void Init(float posX, float posY, int mapX, int mapY,int hp,float _power);
 
 
 	void render();
@@ -78,5 +78,17 @@ protected:
 
 public:
 	void MountEquipItem(EquipItem * item);
+
+
+protected:
+	float _attackCoolTime;
+	float _attackduraction;
+
+public:
+	float GetAttackDuraction() { return _attackduraction; }
+	void SetAttackDuraction(float duraction) { _attackduraction += duraction; }
+	void ReSetAttackDuraction() { _attackduraction=0; }
+
+	float GetAttackCoolTime() { return _attackCoolTime; }
 };
 

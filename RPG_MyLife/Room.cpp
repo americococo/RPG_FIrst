@@ -148,8 +148,6 @@ void Room::removeUpdate()
 		Component * com = _removeList.front();
 		_componentList.remove(com);
 		_removeList.remove(com);
-
-
 	}
 }
 void Room::AddremoveList(Component * removeComponent)

@@ -82,6 +82,9 @@
     <Filter Include="소스 파일\1.Game\Component\MoveObject\State\Attack">
       <UniqueIdentifier>{6c5648fd-3229-4bee-9d4b-6d500ad887e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\1.Game\Component\MoveObject\AttackShape">
+      <UniqueIdentifier>{b5251d68-00ca-4c11-9ef3-6b8816b8de48}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -170,6 +173,9 @@
     </ClCompile>
     <ClCompile Include="AttackState.cpp">
       <Filter>소스 파일\1.Game\Component\MoveObject\State\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackShape.cpp">
+      <Filter>소스 파일\1.Game\Component\MoveObject\AttackShape</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -262,6 +268,9 @@
     </ClInclude>
     <ClInclude Include="AttackState.h">
       <Filter>소스 파일\1.Game\Component\MoveObject\State\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackShape.h">
+      <Filter>소스 파일\1.Game\Component\MoveObject\AttackShape</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

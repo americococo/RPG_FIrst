@@ -7,6 +7,8 @@
 
 #include "MoveObject.h"
 
+#include "AttackShape.h"
+
 AttackState::AttackState()
 {
 
@@ -21,12 +23,12 @@ void AttackState::Start()
 	State::Start();
 
 
-	/*Attackshape * attackshape = new Attackshape();
+	AttackShape * attackshape = new AttackShape();
 
 
-	attackshape->init(_character);
+	attackshape->Init(_character);
 
-	StageManager::GetInstance()->GetStage()->GetRoom(_character->GetMapX(),_character->GetMapY())->AddComponent(attackshape);*/
-
+	StageManager::GetInstance()->GetStage()->GetRoom(_character->GetMapX(),_character->GetMapY())->AddComponent(attackshape);
+	attackshape->SetPos(_character->GetPosX(), _character->GetPosY());
 	_character->ChangeState(eState::ES_IDLE);
 }

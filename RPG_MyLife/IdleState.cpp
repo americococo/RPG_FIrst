@@ -47,14 +47,17 @@ void IdleState::Update(float deltaTime)
 		direction = eDirection::DOWN;
 	}
 
-	if (GameSystem::GetInstance()->IsKeyDown(VK_CONTROL))
-	{
-		_nextState = eState::ES_ATTACK;
-	}
 
 	if (eDirection::NONEDIRCTION != direction)
 		_nextState = eState::ES_MOVE;
 
+	_character->SetAttackDuraction(deltaTime);
+
+	if (GameSystem::GetInstance()->IsKeyDown(VK_CONTROL)&&_character->GetAttackDuraction() >= _character->GetAttackCoolTime()) //attack
+	{
+		_character->ReSetAttackDuraction();
+		_nextState = eState::ES_ATTACK;
+	}
 
 
 }
