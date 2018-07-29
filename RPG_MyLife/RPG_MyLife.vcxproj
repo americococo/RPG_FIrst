@@ -158,6 +158,8 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessagePost.cpp" />
+    <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="MonsterIdleState.cpp" />
     <ClCompile Include="MoveObject.cpp" />
     <ClCompile Include="MoveState.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -191,6 +193,8 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="MessageFrom.h" />
     <ClInclude Include="MessagePost.h" />
+    <ClInclude Include="Monster.h" />
+    <ClInclude Include="MonsterIdleState.h" />
     <ClInclude Include="MoveObject.h" />
     <ClInclude Include="MoveState.h" />
     <ClInclude Include="Player.h" />

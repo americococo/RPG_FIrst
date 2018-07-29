@@ -17,7 +17,7 @@
 #include "MessageFrom.h"
 
 #include "EquipItem.h"
-
+#include "EquipItemWeapon.h"
 MoveObject::MoveObject()
 {
 	_direction = eDirection::NONEDIRCTION;
@@ -133,4 +133,22 @@ void MoveObject::MountEquipItem(EquipItem * item)
 		_equipItem.pop();
 
 	_equipItem.push(item);
+}
+
+void MoveObject::ReduceDurability(int reducePoint)
+{
+	if (false == _equipItem.empty())
+	{
+		EquipItem * item = _equipItem.front();
+		if (eEquipItemType::EquipITEM_WEAPON == item->GetEquipType())
+		{
+			((EquipItemWeapon*)item)->ReduceDurability(reducePoint);
+			if (((EquipItemWeapon*)item)->GetDurability() <= 0)
+			{
+				_equipItem.pop();
+				item->DeInit();
+				delete item;
+			}
+		}
+	}
 }

@@ -85,6 +85,9 @@
     <Filter Include="소스 파일\1.Game\Component\MoveObject\AttackShape">
       <UniqueIdentifier>{b5251d68-00ca-4c11-9ef3-6b8816b8de48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\1.Game\Component\MoveObject\Monster">
+      <UniqueIdentifier>{529aa22c-a4e6-49ec-abdc-7d6b8b8f0efa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -176,6 +179,12 @@
     </ClCompile>
     <ClCompile Include="AttackShape.cpp">
       <Filter>소스 파일\1.Game\Component\MoveObject\AttackShape</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>소스 파일\1.Game\Component\MoveObject\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterIdleState.cpp">
+      <Filter>소스 파일\1.Game\Component\MoveObject\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +280,12 @@
     </ClInclude>
     <ClInclude Include="AttackShape.h">
       <Filter>소스 파일\1.Game\Component\MoveObject\AttackShape</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>소스 파일\1.Game\Component\MoveObject\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterIdleState.h">
+      <Filter>소스 파일\1.Game\Component\MoveObject\State</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

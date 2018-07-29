@@ -30,5 +30,8 @@ void AttackState::Start()
 
 	StageManager::GetInstance()->GetStage()->GetRoom(_character->GetMapX(),_character->GetMapY())->AddComponent(attackshape);
 	attackshape->SetPos(_character->GetPosX(), _character->GetPosY());
+
+	_character->ReduceDurability(rand() % 3);
+						
 	_character->ChangeState(eState::ES_IDLE);
 }

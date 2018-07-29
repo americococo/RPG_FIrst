@@ -11,7 +11,7 @@ public:
 
 public:
 	
-	/*overRide*/	void Update(float dletaTime);
+	/*overRide*/	virtual	void Update(float dletaTime);
 
 	/*overRide*/	void Stop();
 

@@ -33,15 +33,15 @@ void State::createSprite()
 
 	switch (_character->GetComponentType())
 	{
-		case eComponentType::ENEMY:
-			type = L"Enemy";
-			break;
-		case eComponentType::PlAYER:
-			type = L"Player";
-			break;
+	case eComponentType::MONSTER:
+		type = L"Monster";
+		break;
+	case eComponentType::PlAYER:
+		type = L"Player";
+		break;
 	}
 
-	wsprintf(textureFileName, L"./Sprite/%s/%s.png",type.c_str(),type.c_str());
+	wsprintf(textureFileName, L"./Sprite/%s/%s.png", type.c_str(), type.c_str());
 
 
 	//left
@@ -51,8 +51,8 @@ void State::createSprite()
 		_sprite->Init();
 		_spriteVector[eDirection::LEFT] = _sprite;
 
-		int avg= (_sprite->GetWidth() + _sprite->Getheight())/2;
- 		float avg2= avg / 2;
+		int avg = (_sprite->GetWidth() + _sprite->Getheight()) / 2;
+		float avg2 = avg / 2;
 		_character->SetRadius(avg2);
 	}
 
@@ -69,7 +69,7 @@ void State::createSprite()
 		wsprintf(scriptFileName, L"./Sprite/%s/Up.json", type.c_str());
 		Sprite * _sprite = new Sprite(textureFileName, scriptFileName);
 		_sprite->Init();
-		_spriteVector[eDirection::UP]=_sprite;
+		_spriteVector[eDirection::UP] = _sprite;
 	}
 
 	//down
@@ -83,7 +83,7 @@ void State::createSprite()
 void State::Start()
 {
 	_nextState = eState::ES_NONE;
-}	
+}
 
 void State::render()
 {

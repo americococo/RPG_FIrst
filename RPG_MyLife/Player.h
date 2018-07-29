@@ -2,8 +2,6 @@
 
 #include "MoveObject.h"
 
-
-enum eDirection;
 class Player :public MoveObject
 {
 public:

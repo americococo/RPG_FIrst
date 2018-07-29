@@ -90,19 +90,6 @@ void Player::Update(float deltaTime)
 			}
 		}
 
-		//if (false == _equipItem.empty())
-		//{
-		//	EquipItem * item = _equipItem.front();
-		//	if (eEquipItemType::EquipITEM_WEAPON == item->GetEquipType())
-		//	{
-		//		((EquipItemWeapon*)item)->ReduceDurability(30);
-		//		if (((EquipItemWeapon*)item)->GetDurability() >= 0)
-		//		{
-		//			_equipItem.pop();
-		//			item->DeInit();
-		//			delete item;
-		//		}
-		//	}
-		//}
+
 	}
 }

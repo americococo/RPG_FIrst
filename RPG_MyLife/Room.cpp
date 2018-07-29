@@ -12,6 +12,9 @@
 #include "UsingItem.h"
 #include "EquipItem.h"
 #include "EquipItemWeapon.h"
+
+#include "Monster.h"
+
 Room::Room()
 {
 }
@@ -65,7 +68,7 @@ void Room::Init(char * RoomCode, int posx, int posy)
 				
 			case eEquipItemType::EquipITEM_WEAPON:
 				item = new EquipItemWeapon();
-				((EquipItemWeapon*)item)->Init(300, 300, _posX, _posY, L"./Sprite/Item/weapon.png", L"./Sprite/Item/weapon.json",30);
+				((EquipItemWeapon*)item)->Init(300, 300, _posX, _posY, L"./Sprite/Item/weapon.png", L"./Sprite/Item/weapon.json",rand()%50+1);
 				break;
 			}
 			break;
@@ -75,6 +78,13 @@ void Room::Init(char * RoomCode, int posx, int posy)
 		_componentList.push_back(item);
 	}
 
+
+	if (RoomCode[eRoomCodeDecode::IsEnemy] == 'o')
+	{
+		Monster * monster = new Monster();
+		monster->Init(100, 100, _posX, _posY, 50, 100.0f);
+		_componentList.push_back(monster);
+	}
 
 }
 bool Room::CheckPlayer()

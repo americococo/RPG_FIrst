@@ -90,5 +90,13 @@ public:
 	void ReSetAttackDuraction() { _attackduraction=0; }
 
 	float GetAttackCoolTime() { return _attackCoolTime; }
+
+
+
+public:
+	void ReduceDurability(int reducePoint);
+
+
+	
 };
 

@@ -8,7 +8,7 @@ class Sprite;
 enum eComponentType
 {
 	PlAYER,
-	ENEMY,
+	MONSTER,
 	GATE,
 	OBJECT,
 	ITEM,
