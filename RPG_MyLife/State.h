@@ -25,7 +25,7 @@ public:
 
 public:
 
-	void Init(MoveObject * character);
+	virtual void Init(MoveObject * character);
 
 	virtual void Start();
 

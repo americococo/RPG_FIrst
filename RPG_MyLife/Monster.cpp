@@ -9,7 +9,7 @@
 Monster::Monster()
 {
 	_speed = 2.0f;
-	_moveCoolTime = 0.01f;
+	_moveCoolTime = 0.001;
 }
 Monster::~Monster()
 {
