@@ -91,7 +91,9 @@ public:
 
 	float GetAttackCoolTime() { return _attackCoolTime; }
 
+	float GetPower() { return _power; }
 
+	EquipItem * GetItem();
 
 public:
 	void ReduceDurability(int reducePoint);

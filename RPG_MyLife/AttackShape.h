@@ -19,5 +19,10 @@ private:
 
 	int _directionLR;
 	int _directionUD;
+
+
+
+
+	float _attackPoint;
 };
 

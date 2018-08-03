@@ -11,6 +11,9 @@
 #include "Stage.h"
 #include "StageManager.h"
 
+
+#include "EquipItem.h"
+#include "EquipItemWeapon.h"
 AttackShape::AttackShape()
 {
 }
@@ -44,6 +47,12 @@ void AttackShape::Init(MoveObject * character)
 		break;
 	}
 
+	_attackPoint = character->GetPower();
+
+	if (nullptr != character->GetItem() && eEquipItemType::EquipITEM_WEAPON == character->GetItem()->GetEquipType())
+	{
+		_attackPoint += ((EquipItemWeapon*)character->GetItem())->GetWeaponAttackpoint();
+	}
 }
 void AttackShape::Update(float deltaTime)
 {

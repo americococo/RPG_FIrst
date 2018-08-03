@@ -134,7 +134,12 @@ void MoveObject::MountEquipItem(EquipItem * item)
 
 	_equipItem.push(item);
 }
-
+EquipItem * MoveObject::GetItem()
+{
+	if (_equipItem.empty() == false)
+		return _equipItem.front();
+	return nullptr;
+}
 void MoveObject::ReduceDurability(int reducePoint)
 {
 	if (false == _equipItem.empty())

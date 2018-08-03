@@ -8,7 +8,7 @@ void EquipItemWeapon::Init(float posX, float posY, int mapX, int mapY, LPCWSTR t
 
 	_durability = durability;
 
-	_equipItemType = eEquipItemType::EquipITEM_WEAPON;
+	 _equipItemType = eEquipItemType::EquipITEM_WEAPON;
 
 	_incressAtk=rand() % 100 + 20;
 }
